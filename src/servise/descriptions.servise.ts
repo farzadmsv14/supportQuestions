@@ -1,20 +1,18 @@
 import axios from "axios";
+import env from "@/environment";
 
-const API_URL = "https://mocki.io/v1/8902a508-f208-4fd9-a6d4-67309e746d66";
-
-export async function uploadDescriptionAndImage(description: string, image: File | null) {
+export async function uploadDescriptionAndImage(description: string, images: File[]) {
   const formData = new FormData();
   formData.append("description", description);
-
-  if (image) {
-    formData.append("image", image);
-  }
-
-  const res = await axios.post(API_URL, formData, {
+  images.forEach((image, index) => {
+    formData.append("images", image);
+  });
+  console.log(formData);
+  const res = await axios.post(env.apiBaseUrl, formData, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
   });
 
-  return res.data;
+  return res;
 }

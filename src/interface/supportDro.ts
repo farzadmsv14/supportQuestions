@@ -4,3 +4,10 @@ interface Question {
   description: string;
   answer?: string;
 }
+
+interface Questions {
+  pageId: number;
+  title: string;
+  description: string;
+  questions: Question[];
+}
