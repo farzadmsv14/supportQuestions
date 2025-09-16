@@ -92,7 +92,8 @@ const Support = () => {
             onClick={() => handleClick(item)}
             className={`w-full text-right p-4 border border-gray-300 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors 
               flex justify-between items-center cursor-pointer ${item.answer && openId === item.id ? "border-b-0 rounded-b-none" : ""}
-              `}>
+              `}
+          >
             <div>
               <h2 className="text-base sm:text-lg font-bold mb-2">{item.question}</h2>
               <p className="m-0 text-sm sm:text-base">{item.description}</p>

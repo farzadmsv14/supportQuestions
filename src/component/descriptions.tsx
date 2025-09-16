@@ -93,7 +93,7 @@ export default function DescriptionUpload() {
           {imageError && <span className="text-red-500 text-sm">{imageError}</span>}
         </label>
 
-        <div className="flex gap-2 flex-wrap mt-2">
+        <div className="flex gap-2  justify-center flex-wrap mt-2">
           {previews.map((src, index) => (
             <div key={index} className="relative">
               <img src={src} alt={`Preview ${index}`} className="w-32 h-32 rounded border" />
